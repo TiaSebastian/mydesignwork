@@ -32,7 +32,7 @@ a {
   text-decoration: none;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 100px;
+  margin: 120px;
 }
 a:hover {
   color: #000000;
@@ -232,4 +232,27 @@ img {
   font-family:'Times New Roman', Times, serif;
   font-size: 9pt;
   color: rgb(255, 255, 255);
+}
+.chime_in {
+  position: absolute;
+  top: 350px;
+  left: 1000px;
+}
+
+.cdi_pic {
+  position: absolute;
+  top: 900px;
+  left: 1000px;
+}
+
+.cdi_pic2 {
+  position: absolute;
+  top: 1100px;
+  left: 1000px;
+}
+
+.chaku {
+  position: absolute;
+  top: 1500px;
+  left: 1000px;
 }

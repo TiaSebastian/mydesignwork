@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tia Ibasco Sebastian</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/T3-01.png" type="image/png" />
+  </head>
+  <body>
+    <div class="nav-links">
+      <a href="index.html">home</a>
+      <a href="about.html">about</a>
+      <a href="https://www.instagram.com/tiasebastian/"">instagram</a>
+      <a href="assets/CV_forwebsite.pdf" download="CV_forwebsite">cv</a>
+    </div>
+
+    <div class="header">
+      <p>
+        Tia Ibasco Sebastian <br />ᜆᜒᜀ ᜁᜊᜐ᜔ᜃᜓ ᜐᜒᜊᜐ᜔ᜆᜒᜀᜈ᜔
+      </p>
+    </div>
+
+    <div class="subheading">
+        <p>a little online portal of things I've been making... enjoy having a look around. </p>
+    </div>
+
+    <div class="scattered-gallery">
+      <div class="image-container photo1">
+        <img src="assets/IMG_0746.jpeg" alt="w1" data-caption="Brass and Copper Chime (2025)"/>
+        <div class="caption">Brass and copper chime that I made for my uni assessment. If you want to see/hear it in action you can click here.</div>
+      </div>
+      <div class="image-container photo2">
+        <img src="assets/IMG_9148.jpeg" alt="w2" />
+        <div class="caption">Testing out making a copper pill box. I never got around to soldering it, but I think it still looked sweet.</div>
+      </div>
+      <div class="metalwork">
+        <h1>metalwork</h1>
+      </div>
+      <div class="image-container photo3">
+        <img src="assets/IMG_9446.jpeg" alt="w3" />
+        <div class="caption">Fold forming!!! with copper. As time consuming as this process is, I really love the results. Keen to iterate on fold forming further.</div>
+      </div>
+      <div class="image-container photo6">
+        <img src="assets/fabricsample.jpeg" alt="w6" />
+        <div class="caption">Rust dye fabric sample... which I also adding ruching(?) to.</div>
+      </div>
+      <div class="textiles">
+        <h1>textiles</h1>
+      </div>
+      <div class="image-container photo7">
+        <img src="assets/weavingonstone.jpeg" alt="w7" />
+        <div class="caption">Various yarns and scrap fabrics on a slab of tile.</div>
+      </div>
+      <div class="image-container photo9">
+        <img src="assets/cdinecklace.png" alt="w9" />
+        <div class="caption">ceramic and metal necklace which was a part of a collection for one of my first university assignments.</div>
+      </div>
+    </div>
+
+    <div class="thank-you">
+      <p>I'd like to thank my beautiful, amazing, smart, talented friend Becky Heaton for teaching me how to code this website. <br>I had so much fun making it and continue to have so much fun adding to it.<br>I hope you like it!</p>
+    </div>
+    <script>
+        const containers = document.querySelectorAll('.image-container');
+
+        document.addEventListener('mousemove', (e) => {
+        containers.forEach(container => {
+        const rect = container.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const dx = e.clientX - centerX;
+        const dy = e.clientY - centerY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const maxDistance = 250; // how far the effect reaches
+        if (distance < maxDistance) {
+        const angle = Math.atan2(dy, dx);
+        const strength = (1 - distance / maxDistance) * 10;
+
+        const xOffset = Math.cos(angle) * strength;
+        const yOffset = Math.sin(angle) * strength;
+        const rotate = strength * 0.3;
+
+        container.style.transform = `translate(${xOffset}px, ${yOffset}px) rotate(${rotate}deg)`;
+        } else {
+        container.style.transform = `translate(0px, 0px) rotate(0deg)`;
+        }
+        });
+    });
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.image-container img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.getAttribute('data-caption') || '';
+    });
+  });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+  lightbox.addEventListener ('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+ </script>
+
+     <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
+    
+    <script defer src="scripts.js" ></script>
+  </body>
+</html>

@@ -191,35 +191,16 @@ img {
     text-align:left
 }
 
-.video {
-  position: absolute;
-  top: 790px;
-  left: 590px;
-  padding-bottom: 100px;
-}
-
-.video1 {
-  position: absolute;
-  top: 790px;
-  left: 50px;
-}
-
-.video2 {
-  position: absolute;
-  top: 790px;
-  left: 1130px;
-}
-
 .bubbles_tia{
   position: absolute;
   left: 1000px;
-  top: 330px;
+  top: 500px;
   rotate: -9deg;
 }
 .about_tia {
   position: absolute;
   left: 820px;
-  top: 300px;
+  top: 450px;
   rotate: 2.5deg;
   width: 300px;
 }
